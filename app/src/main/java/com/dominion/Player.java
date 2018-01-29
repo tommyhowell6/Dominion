@@ -14,6 +14,7 @@ import java.util.ArrayList;
 
 public class Player
 {
+
     private Phase phase;
     private PlayerDeck deck;
     private Hand hand;

@@ -6,5 +6,8 @@ package com.dominion.Phases;
 
 public class Phase
 {
+    public void endPhase(Phase nextPhase)
+    {
 
+    }
 }
