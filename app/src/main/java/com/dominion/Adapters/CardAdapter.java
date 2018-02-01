@@ -4,6 +4,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 
+import com.dominion.Cards.Card;
+import com.dominion.Cards.VictoryCards.VictoryCard;
+
+import java.util.ArrayList;
+
 /**
  * Created by tommyhowell on 1/31/18.
  */
@@ -13,7 +18,7 @@ public class CardAdapter extends BaseAdapter
     @Override
     public int getCount()
     {
-        return 0;
+        return allCards.length;
     }
 
     @Override
@@ -33,4 +38,6 @@ public class CardAdapter extends BaseAdapter
     {
         return null;
     }
+
+    private Card[] allCards = {new VictoryCard("Estate", 8, 5)};
 }

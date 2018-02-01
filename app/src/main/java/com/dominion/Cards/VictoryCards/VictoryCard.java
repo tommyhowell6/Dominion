@@ -8,5 +8,11 @@ import com.dominion.Cards.Card;
 
 public class VictoryCard extends Card
 {
+    public VictoryCard(String name, int cost, int victoryPointValue)
+    {
+        super(name, cost);
+        this.victoryPointValue = victoryPointValue;
+    }
+
     private int victoryPointValue;
 }

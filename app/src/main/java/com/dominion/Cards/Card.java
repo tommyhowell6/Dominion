@@ -8,8 +8,12 @@ import com.dominion.Player;
 
 public class Card
 {
-    private Player owner;
     private String name;
-    private String description;
     private int cost;
+
+    public Card(String name, int cost)
+    {
+        this.name = name;
+        this.cost = cost;
+    }
 }
