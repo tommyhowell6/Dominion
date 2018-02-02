@@ -1,8 +1,10 @@
 package com.dominion.Adapters;
 
+import android.content.Context;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.ImageView;
 
 import com.dominion.Cards.Card;
 import com.dominion.Cards.VictoryCards.VictoryCard;
@@ -15,6 +17,13 @@ import java.util.ArrayList;
 
 public class CardAdapter extends BaseAdapter
 {
+    private Context mContext;
+
+    public CardAdapter(Context c)
+    {
+        mContext = c;
+    }
+
     @Override
     public int getCount()
     {
@@ -36,7 +45,17 @@ public class CardAdapter extends BaseAdapter
     @Override
     public View getView(int i, View view, ViewGroup viewGroup)
     {
-        return null;
+        ImageView imageView;
+        if(view == null)
+        {
+            imageView = new ImageView(mContext);
+
+        }
+        else
+        {
+            imageView = (ImageView) view;
+        }
+        return imageView;
     }
 
     private Card[] allCards = {new VictoryCard("Estate", 8, 5)};

@@ -1,5 +1,6 @@
 package com.dominion.Fragments;
 
+import android.content.Intent;
 import android.support.v4.app.Fragment;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -9,6 +10,8 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.Toast;
 
+import com.dominion.Activities.DeckSelectionActivity;
+import com.dominion.Activities.MainActivity;
 import com.dominion.R;
 
 /**
@@ -18,6 +21,7 @@ import com.dominion.R;
 public class GameFragment extends Fragment
 {
     private Button mStartGameButton;
+    private Button mDeckSelectionButton;
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState)
     {
@@ -36,7 +40,21 @@ public class GameFragment extends Fragment
             @Override
             public void onClick(View view)
             {
+                assert container != null;
                 Toast.makeText(container.getContext(), "Start Game", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        mDeckSelectionButton = (Button) v.findViewById(R.id.select_deck_button);
+        mDeckSelectionButton.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View view)
+            {
+                assert container != null;
+                //Toast.makeText(container.getContext(), "Loading Decks", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(v.getContext(), DeckSelectionActivity.class);
+                getActivity().startActivity(intent);
             }
         });
 

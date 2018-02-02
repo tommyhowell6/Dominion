@@ -8,5 +8,11 @@ import com.dominion.Cards.Card;
 
 public class TreasureCard extends Card
 {
+    public TreasureCard(String name, int cost, int value)
+    {
+        super(name, cost);
+        this.value = value;
+    }
+
     private int value;
 }
