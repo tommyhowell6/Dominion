@@ -12,6 +12,7 @@ import android.widget.Toast;
 
 import com.dominion.Activities.DeckSelectionActivity;
 import com.dominion.Activities.MainActivity;
+import com.dominion.Activities.SettingsActivity;
 import com.dominion.R;
 
 /**
@@ -53,8 +54,9 @@ public class GameFragment extends Fragment
             {
                 assert container != null;
                 //Toast.makeText(container.getContext(), "Loading Decks", Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent(v.getContext(), DeckSelectionActivity.class);
-                getActivity().startActivity(intent);
+                Intent intent = new Intent(getContext(), SettingsActivity.class);
+//                startActivity(intent);
+                ((MainActivity) getActivity()).startMyIntent(intent);
             }
         });
 
