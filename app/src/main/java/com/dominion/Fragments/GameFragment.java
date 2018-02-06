@@ -54,7 +54,7 @@ public class GameFragment extends Fragment
             {
                 assert container != null;
                 //Toast.makeText(container.getContext(), "Loading Decks", Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent(getContext(), SettingsActivity.class);
+                Intent intent = new Intent(getContext(), DeckSelectionActivity.class);
 //                startActivity(intent);
                 ((MainActivity) getActivity()).startMyIntent(intent);
             }
