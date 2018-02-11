@@ -8,9 +8,8 @@ import java.util.ArrayList;
  * Created by tommyhowell on 1/29/18.
  */
 
-public class Hand
+public class Hand extends Deck
 {
-    ArrayList<Card> cards;
 
     public void add(Card card)
     {

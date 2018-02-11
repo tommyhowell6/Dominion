@@ -31,6 +31,7 @@ public class DeckSelectionActivity extends AppCompatActivity
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l)
             {
+
                 Toast.makeText(DeckSelectionActivity.this, "" + i, Toast.LENGTH_SHORT).show();
             }
         });

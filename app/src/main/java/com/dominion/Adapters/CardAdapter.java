@@ -8,6 +8,7 @@ import android.widget.ImageView;
 
 import com.dominion.Cards.Card;
 import com.dominion.Cards.VictoryCards.VictoryCard;
+import com.dominion.R;
 
 import java.util.ArrayList;
 
@@ -27,7 +28,7 @@ public class CardAdapter extends BaseAdapter
     @Override
     public int getCount()
     {
-        return allCards.length;
+        return 9;
     }
 
     @Override
@@ -49,14 +50,42 @@ public class CardAdapter extends BaseAdapter
         if(view == null)
         {
             imageView = new ImageView(mContext);
-
         }
         else
         {
             imageView = (ImageView) view;
         }
+        if(i < 9)
+        {
+            imageView.setImageResource(getCoinResouse(i));
+        }
         return imageView;
     }
 
     private Card[] allCards = {new VictoryCard("Estate", 8, 5)};
+    private int getCoinResouse(int i)
+    {
+        switch (i)
+        {
+            case 0:
+                return R.drawable.coin_0;
+            case 1:
+                return R.drawable.coin_1;
+            case 2:
+                return R.drawable.coin_2;
+            case 3:
+                return R.drawable.coin_3;
+            case 4:
+                return R.drawable.coin_4;
+            case 5:
+                return R.drawable.coin_5;
+            case 6:
+                return R.drawable.coin_6;
+            case 7:
+                return R.drawable.coin_7;
+            case 8:
+                return R.drawable.coin_8;
+        }
+        return 0;// **TO DO** 2/8/18  make a container to avoid getting 0 for any error
+    }
 }
