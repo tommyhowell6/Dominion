@@ -63,7 +63,7 @@ public class GameFragment extends Fragment
         });
 
         mNumberPlayersSpinner = (Spinner) v.findViewById(R.id.number_players_spinner);
-        
+
         return v;
     }
 }
