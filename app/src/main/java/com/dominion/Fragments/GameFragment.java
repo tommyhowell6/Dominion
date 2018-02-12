@@ -8,6 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.dominion.Activities.DeckSelectionActivity;
@@ -23,6 +24,7 @@ public class GameFragment extends Fragment
 {
     private Button mStartGameButton;
     private Button mDeckSelectionButton;
+    private Spinner mNumberPlayersSpinner;
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState)
     {
@@ -60,6 +62,8 @@ public class GameFragment extends Fragment
             }
         });
 
+        mNumberPlayersSpinner = (Spinner) v.findViewById(R.id.number_players_spinner);
+        
         return v;
     }
 }

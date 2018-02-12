@@ -35,5 +35,15 @@
         android:layout_centerInParent="true"
         android:text="@string/start_game"/>
 
+    <Spinner
+        android:id="@+id/number_players_spinner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/start_game_button"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginLeft="11dp"
+        android:layout_marginStart="11dp"/>
+
 
 </RelativeLayout>
