@@ -3,16 +3,35 @@
               android:orientation="vertical"
               android:layout_width="match_parent"
               android:layout_height="match_parent">
-
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <Button
+            android:id="@+id/back_button_id"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/back"/>
+        <Button
+            android:id="@+id/selected_deck_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="View Selected Deck"/>
+        <Button
+            android:id="@+id/start_game_button_from_deck_select"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/start_game"/>
+    </LinearLayout>
         <GridView
             android:id="@+id/card_grid_view"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:columnWidth="90dp"
             android:numColumns="auto_fit"
             android:verticalSpacing="10dp"
             android:horizontalSpacing="10dp"
             android:stretchMode="columnWidth"
-            android:gravity="center"
+            android:gravity="top"
             />
+
 </LinearLayout>

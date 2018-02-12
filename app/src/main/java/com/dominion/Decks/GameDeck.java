@@ -1,6 +1,7 @@
 package com.dominion.Decks;
 
 import com.dominion.Cards.Card;
+import com.dominion.Exceptions.GameDeckFull;
 import com.dominion.Exceptions.OutOfCards;
 
 import java.util.ArrayList;
@@ -11,11 +12,14 @@ import java.util.ArrayList;
 
 public class GameDeck extends Deck
 {
+    private int numberOfDecks;
     private String name;
 
-    public GameDeck(Card card)
+
+    public GameDeck(Card card, int numberOfDecks)
     {
         this.name = card.getName();
+        this.numberOfDecks = numberOfDecks;
         cards = new ArrayList<>();
     }
 
@@ -31,4 +35,21 @@ public class GameDeck extends Deck
         }
     }
 
+    public boolean toggleCardToGameDeck(Card card) throws GameDeckFull
+    {
+        if(cards.contains(card))
+        {
+            cards.remove(card);
+            return false;
+        }
+        else if(numberOfDecks >= cards.size())
+        {
+            throw new GameDeckFull("You have already selected " + numberOfDecks + " cards");
+        }
+        else
+        {
+            cards.add(card);
+            return true;
+        }
+    }
 }
