@@ -27,6 +27,26 @@
             android:layout_alignParentRight="true"/>
     </RelativeLayout>
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/start_game_button"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/select_number_of_players"/>
+
+    <Spinner
+        android:id="@+id/number_players_spinner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:prompt="@string/select_number_of_players"
+        android:entries="@array/number_of_players"
+        android:layout_marginLeft="11dp"
+        android:layout_marginStart="11dp"/>
+    </LinearLayout>
     <Button
         android:id="@+id/start_game_button"
         android:layout_width="wrap_content"
@@ -35,17 +55,7 @@
         android:layout_centerInParent="true"
         android:text="@string/start_game"/>
 
-    <Spinner
-        android:id="@+id/number_players_spinner"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/start_game_button"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:prompt="@string/select_number_of_players"
-        android:entries="@array/number_of_players"
-        android:layout_marginLeft="11dp"
-        android:layout_marginStart="11dp"/>
+
 
 
 </RelativeLayout>

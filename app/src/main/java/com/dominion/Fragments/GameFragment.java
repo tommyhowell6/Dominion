@@ -25,6 +25,7 @@ public class GameFragment extends Fragment
     private Button mStartGameButton;
     private Button mDeckSelectionButton;
     private Spinner mNumberPlayersSpinner;
+
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState)
     {
@@ -44,7 +45,7 @@ public class GameFragment extends Fragment
             public void onClick(View view)
             {
                 assert container != null;
-                Toast.makeText(container.getContext(), "Start Game", Toast.LENGTH_SHORT).show();
+                Toast.makeText(container.getContext(), "Start Game " + String.valueOf(mNumberPlayersSpinner.getSelectedItem()), Toast.LENGTH_SHORT).show();
             }
         });
 
