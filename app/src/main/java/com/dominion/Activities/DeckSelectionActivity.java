@@ -1,5 +1,6 @@
 package com.dominion.Activities;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
@@ -27,7 +28,8 @@ public class DeckSelectionActivity extends AppCompatActivity
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_deck_selection);
-
+        Intent intent = getIntent();
+        int numberOfPlayers = (int) intent.getSerializableExtra("numberOfPlayers");
         gridView = (GridView) findViewById(R.id.card_grid_view);
         gridView.setAdapter(new CardAdapter(this));
 
