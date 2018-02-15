@@ -19,7 +19,6 @@ import com.dominion.R;
 
 public class DeckSelectionActivity extends AppCompatActivity
 {
-    private Button backButton;
     private Button selectedDeckButton;
     private Button startGameButton;
     private GridView gridView;
@@ -29,7 +28,7 @@ public class DeckSelectionActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_deck_selection);
         Intent intent = getIntent();
-        int numberOfPlayers = (int) intent.getSerializableExtra("numberOfPlayers");
+        final int numberOfPlayers = (int) intent.getSerializableExtra("numberOfPlayers");
         gridView = (GridView) findViewById(R.id.card_grid_view);
         gridView.setAdapter(new CardAdapter(this));
 
@@ -40,16 +39,6 @@ public class DeckSelectionActivity extends AppCompatActivity
             {
 
                 Toast.makeText(DeckSelectionActivity.this, "" + i, Toast.LENGTH_SHORT).show();
-            }
-        });
-
-        backButton = (Button) findViewById(R.id.back_button_id);
-        backButton.setOnClickListener(new View.OnClickListener()
-        {
-            @Override
-            public void onClick(View view)
-            {
-
             }
         });
 
@@ -69,7 +58,7 @@ public class DeckSelectionActivity extends AppCompatActivity
             @Override
             public void onClick(View view)
             {
-
+                Toast.makeText(getBaseContext(), "Starting Game " + numberOfPlayers, Toast.LENGTH_SHORT).show();
             }
         });
     }

@@ -56,7 +56,7 @@ public class GameFragment extends Fragment
             public void onClick(View view)
             {
                 assert container != null;
-                //Toast.makeText(container.getContext(), "Loading Decks", Toast.LENGTH_SHORT).show();
+
                 Intent intent = new Intent(getContext(), DeckSelectionActivity.class);
                 int numberOfPlayers = Integer.parseInt(mNumberPlayersSpinner.getSelectedItem().toString());
                 intent.putExtra("numberOfPlayers", numberOfPlayers);
