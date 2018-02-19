@@ -25,6 +25,7 @@ public class DeckSelectionActivity extends AppCompatActivity
     private Button selectedDeckButton;
     private Button startGameButton;
     private GridView gridView;
+    private Deck selectedDeck;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState)
     {
@@ -33,7 +34,7 @@ public class DeckSelectionActivity extends AppCompatActivity
         Intent intent = getIntent();
         final int numberOfPlayers = (int) intent.getSerializableExtra("numberOfPlayers");
 
-        Deck selectedDeck = new GameDeck(NUMBER_OF_PLAYABLE_CARDS);
+        selectedDeck = new GameDeck(NUMBER_OF_PLAYABLE_CARDS);
 
         gridView = (GridView) findViewById(R.id.card_grid_view);
         gridView.setAdapter(new CardAdapter(this));
@@ -67,8 +68,14 @@ public class DeckSelectionActivity extends AppCompatActivity
                 Toast.makeText(getBaseContext(), "Starting Game " + numberOfPlayers, Toast.LENGTH_SHORT).show();
             }
         });
+    }
+
+    @Override
+    public void onBackPressed()
+    {
         Intent backIntent = new Intent();
-//        backIntent.putExtra("selectedDeck", selectedDeck);
+        backIntent.putExtra("selectedDeck", "this is where the deck will be");
         setResult(RESULT_OK, backIntent);
+        finish();
     }
 }
