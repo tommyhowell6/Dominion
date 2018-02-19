@@ -16,9 +16,8 @@ public class GameDeck extends Deck
     private String name;
 
 
-    public GameDeck(Card card, int numberOfDecks)
+    public GameDeck(int numberOfDecks)
     {
-        this.name = card.getName();
         this.numberOfDecks = numberOfDecks;
         cards = new ArrayList<>();
     }

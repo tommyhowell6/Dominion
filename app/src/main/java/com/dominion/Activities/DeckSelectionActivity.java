@@ -11,6 +11,8 @@ import android.widget.GridView;
 import android.widget.Toast;
 
 import com.dominion.Adapters.CardAdapter;
+import com.dominion.Decks.Deck;
+import com.dominion.Decks.GameDeck;
 import com.dominion.R;
 
 /**
@@ -19,6 +21,7 @@ import com.dominion.R;
 
 public class DeckSelectionActivity extends AppCompatActivity
 {
+    private static final int NUMBER_OF_PLAYABLE_CARDS = 12;
     private Button selectedDeckButton;
     private Button startGameButton;
     private GridView gridView;
@@ -29,6 +32,9 @@ public class DeckSelectionActivity extends AppCompatActivity
         setContentView(R.layout.activity_deck_selection);
         Intent intent = getIntent();
         final int numberOfPlayers = (int) intent.getSerializableExtra("numberOfPlayers");
+
+        Deck selectedDeck = new GameDeck(NUMBER_OF_PLAYABLE_CARDS);
+
         gridView = (GridView) findViewById(R.id.card_grid_view);
         gridView.setAdapter(new CardAdapter(this));
 
@@ -61,5 +67,8 @@ public class DeckSelectionActivity extends AppCompatActivity
                 Toast.makeText(getBaseContext(), "Starting Game " + numberOfPlayers, Toast.LENGTH_SHORT).show();
             }
         });
+        Intent backIntent = new Intent();
+//        backIntent.putExtra("selectedDeck", selectedDeck);
+        setResult(RESULT_OK, backIntent);
     }
 }

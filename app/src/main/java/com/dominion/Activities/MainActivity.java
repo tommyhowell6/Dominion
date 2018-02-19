@@ -30,6 +30,6 @@ public class MainActivity extends AppCompatActivity implements myInterface
 
     @Override
     public void startMyIntent(Intent i) {
-        startActivity(i);
+        startActivityForResult(i, 1);
     }
 }
